@@ -282,3 +282,9 @@ Your AGRI4 ADVISOR Windows app can be easily distributed through any website. Us
 - ✅ **Get** agricultural advisory
 
 **The Windows version will be a perfect complement to your mobile app! 🌾**
+
+
+
+
+
+

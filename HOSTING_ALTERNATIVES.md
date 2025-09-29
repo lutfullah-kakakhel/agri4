@@ -200,3 +200,9 @@ Your AGRI4 ADVISOR web app is ready for deployment on any hosting platform!
 5. **No installation required** - works everywhere!
 
 **The web version gives you the best distribution - universal access with native app features! 🌾**
+
+
+
+
+
+

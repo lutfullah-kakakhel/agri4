@@ -196,3 +196,9 @@ For technical support with the website setup:
 **🎉 Your AGRI4 ADVISOR Windows download page is ready!**
 
 Users can now easily download and install the Windows desktop version of your agricultural advisory application.
+
+
+
+
+
+

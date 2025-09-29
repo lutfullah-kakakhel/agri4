@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:agri4_app/map/field_map_screen.dart';
+import 'package:agri4_app/screens/location_screen.dart';
+import 'package:agri4_app/screens/crop_selection_screen.dart';
+import 'package:agri4_app/screens/weather_screen.dart';
+import 'package:agri4_app/screens/satellite_screen.dart';
+import 'package:agri4_app/urdu_report_screen.dart';
+import 'package:agri4_app/urdu_advice_screen.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:agri4_app/settings/settings_screen.dart';
+import 'package:agri4_app/voice/urdu_agricultural_screen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -34,9 +40,77 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: const FieldMapScreen(),
+      home: const LocationScreen(),
       routes: <String, WidgetBuilder>{
         '/settings': (_) => const SettingsScreen(),
+        '/voice': (_) => const UrduAgriculturalScreen(),
+        '/crop-selection': (context) {
+          final args = ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>;
+          return CropSelectionScreen(
+            position: args['position'],
+            locationName: args['locationName'],
+            districtName: args['districtName'],
+            provinceName: args['provinceName'],
+            agriculturalZone: args['agriculturalZone'],
+            locationDetails: args['locationDetails'],
+          );
+        },
+        '/weather': (context) {
+          final args = ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>;
+          return WeatherScreen(
+            position: args['position'],
+            locationName: args['locationName'],
+            districtName: args['districtName'],
+            provinceName: args['provinceName'],
+            agriculturalZone: args['agriculturalZone'],
+            locationDetails: args['locationDetails'],
+            selectedCrop: args['selectedCrop'],
+            cropInfo: args['cropInfo'],
+          );
+        },
+        '/satellite': (context) {
+          final args = ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>;
+          return SatelliteScreen(
+            position: args['position'],
+            locationName: args['locationName'],
+            districtName: args['districtName'],
+            provinceName: args['provinceName'],
+            agriculturalZone: args['agriculturalZone'],
+            locationDetails: args['locationDetails'],
+            selectedCrop: args['selectedCrop'],
+            cropInfo: args['cropInfo'],
+            currentWeather: args['currentWeather'],
+            forecast: args['forecast'],
+            weatherRecommendations: args['weatherRecommendations'],
+          );
+        },
+        '/final-report': (context) {
+          final args = ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>;
+          return UrduReportScreen(
+            cropName: args['selectedCrop'],
+            locationName: args['locationName'],
+            agriculturalZone: args['agriculturalZone'],
+            position: args['position'],
+          );
+        },
+        '/urdu-report': (context) {
+          final args = ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>;
+          return UrduReportScreen(
+            cropName: args['crop'],
+            locationName: args['location'],
+            agriculturalZone: args['agriculturalZone'],
+            position: args['position'],
+          );
+        },
+        '/urdu-advice': (context) {
+          final args = ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>;
+          return UrduAdviceScreen(
+            cropName: args['crop'],
+            locationName: args['location'],
+            agriculturalZone: args['agriculturalZone'],
+            position: args['position'],
+          );
+        },
       },
     );
   }

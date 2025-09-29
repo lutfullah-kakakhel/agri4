@@ -293,6 +293,10 @@ class _FieldMapScreenState extends State<FieldMapScreen> {
     );
   }
 
+  void _navigateToVoiceScreen() {
+    Navigator.of(context).pushNamed('/voice');
+  }
+
   double _computeAreaSquareMeters(List<LatLng> points) => computePolygonAreaSquareMeters(points);
 
   String _areaLabel() {
@@ -826,6 +830,15 @@ class _FieldMapScreenState extends State<FieldMapScreen> {
                             label: const Text('Advisory'),
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.green.shade600,
+                              foregroundColor: Colors.white,
+                            ),
+                          ),
+                          ElevatedButton.icon(
+                            onPressed: _navigateToVoiceScreen,
+                            icon: const Icon(Icons.agriculture),
+                            label: const Text('زرعی مشیر'),
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.orange.shade600,
                               foregroundColor: Colors.white,
                             ),
                           ),

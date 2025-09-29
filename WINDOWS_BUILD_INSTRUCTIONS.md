@@ -187,3 +187,9 @@ If you encounter issues:
 **🎉 Your AGRI4 ADVISOR Windows desktop app is ready!**
 
 The app will work exactly like the mobile version but optimized for desktop use with larger screens and better navigation.
+
+
+
+
+
+

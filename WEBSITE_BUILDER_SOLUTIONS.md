@@ -153,3 +153,9 @@ Your web app files are ready:
 **The web version works on ALL platforms - Windows, Mac, Linux, Android, iOS - with just a web browser! 🌾**
 
 Would you like me to walk you through the Netlify deployment process?
+
+
+
+
+
+
