@@ -8,14 +8,29 @@ import 'package:agri4_app/urdu_advice_screen.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:agri4_app/settings/settings_screen.dart';
 import 'package:agri4_app/voice/urdu_agricultural_screen.dart';
+import 'package:agri4_app/services/agricultural_database_service.dart';
+import 'package:flutter/foundation.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Hive.initFlutter();
-  await Hive.openBox('fields');
-  await Hive.openBox('settings');
-  await Hive.openBox('cache_weather');
-  await Hive.openBox('cache_ndvi');
+  
+  try {
+    // Initialize Hive for mobile only
+    if (!kIsWeb) {
+      await Hive.initFlutter();
+      await Hive.openBox('fields');
+      await Hive.openBox('settings');
+      await Hive.openBox('cache_weather');
+      await Hive.openBox('cache_ndvi');
+    }
+    
+    // Initialize Agricultural Database Service (works on mobile, has fallback for web)
+    await AgriculturalDatabaseService().initialize();
+  } catch (e) {
+    // If initialization fails, continue anyway
+    debugPrint('Initialization error: $e');
+  }
+  
   runApp(const MyApp());
 }
 

@@ -47,3 +47,6 @@ build/
 *.tar.gz
 frontend/
 build/
+
+# Local Netlify folder
+.netlify
