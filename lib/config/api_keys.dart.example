@@ -1,0 +1,15 @@
+// API Keys Configuration - EXAMPLE FILE
+// Copy this file to api_keys.dart and add your actual API keys
+// DO NOT commit api_keys.dart to version control
+
+class ApiKeys {
+  // OpenWeatherMap API Key
+  // Get your free API key from: https://openweathermap.org/api
+  static const String openWeatherMapApiKey = 'YOUR_API_KEY_HERE';
+  
+  // Instructions:
+  // 1. Copy this file: cp api_keys.dart.example api_keys.dart
+  // 2. Replace 'YOUR_API_KEY_HERE' with your actual API key
+  // 3. Make sure api_keys.dart is in .gitignore
+  // 4. Never commit api_keys.dart to version control
+}

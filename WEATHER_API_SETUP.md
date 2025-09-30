@@ -53,3 +53,4 @@ netlify deploy --prod --dir=build/web
 🟢 **Will use Real Weather Data** (once API key is added)
 
 The simulated data is now much more accurate and season-aware, but real API data will be even better!
+

@@ -50,3 +50,14 @@ build/
 
 # Local Netlify folder
 .netlify
+
+# Environment variables and sensitive data
+.env
+.env.local
+.env.production
+*.key
+secrets/
+
+# API keys and sensitive configuration
+lib/config/api_keys.dart
+lib/config/secrets.dart

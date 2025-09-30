@@ -1,12 +1,16 @@
+import 'api_keys.dart';
+
 class WeatherConfig {
   // OpenWeatherMap API Configuration
   // Get your free API key from: https://openweathermap.org/api
   
-  // IMPORTANT: Replace this with your actual OpenWeatherMap API key
-  static const String openWeatherMapApiKey = '2b92acfdb08bac9746248ed2051558a1';
+  // SECURITY: API key is now stored in a separate file (api_keys.dart)
+  // Make sure to:
+  // 1. Add your actual API key to lib/config/api_keys.dart
+  // 2. Add api_keys.dart to .gitignore
+  // 3. Never commit API keys to version control
   
-  // Alternative: Use environment variable (recommended for production)
-  // static const String openWeatherMapApiKey = String.fromEnvironment('OPENWEATHER_API_KEY', defaultValue: 'demo_key_replace_with_your_key');
+  static const String openWeatherMapApiKey = ApiKeys.openWeatherMapApiKey;
   
   // API Configuration
   static const String baseUrl = 'https://api.openweathermap.org/data/2.5';
